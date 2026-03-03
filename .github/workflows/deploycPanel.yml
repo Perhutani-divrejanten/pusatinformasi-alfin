@@ -1,19 +1,44 @@
-name: Publish Website to CPanel
+name: Build and Deploy to cPanel
+
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
+  workflow_dispatch:
+  repository_dispatch:
+
 jobs:
-  FTP-Deploy-Action:
-    name: FTP-Deploy-Action
+  ftp-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2.1.0
+      - name: Checkout source
+        uses: actions/checkout@v4
         with:
-          fetch-depth: 2
-      - name: FTP-Deploy-Action
-        uses: SamKirkland/FTP-Deploy-Action@3.1.1
+          fetch-depth: 0          # full history not needed but safe
+
+      - name: Setup Node (optional)
+        uses: actions/setup-node@v4
         with:
-          ftp-server: ${{ secrets.FTP_SERVER }}
-          ftp-username: ${{ secrets.FTP_USERNAME }}
-          ftp-password: ${{ secrets.FTP_PASSWORD }}
+          node-version: 18
+
+      - name: Install dependencies
+        run: |
+          if [ -f package.json ]; then npm ci; fi
+
+      - name: Run static generator
+        run: node tools/generate.js
+        env:
+          SHEETS_URL: ${{ secrets.SHEETS_URL }}
+
+      - name: Debug workspace
+        run: |
+          echo "pwd=$(pwd)"
+          ls -al
+
+      - name: Deploy via FTP to cPanel
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./            # wajib berakhir slash
+          server-dir: /home/wartajan/public_html/  # berakhir slash
