@@ -2,8 +2,7 @@
 async function loadLatestNews() {
     try {
         const response = await fetch('articles.json');
-        const data = await response.json();
-        const articles = data.articles;
+        const articles = await response.json();
 
         // Get articles 14-17 for latest news section (0-indexed: 13-16)
         const latestArticles = articles.slice(13, 17);
@@ -33,29 +32,25 @@ async function loadLatestNews() {
 
         // Create the latest news items
         latestArticles.forEach((article, index) => {
-            const colClass = index < 2 ? 'col-lg-6' : 'col-lg-6'; // All are col-lg-6
+            const colClass = 'col-lg-6';
             const articleHtml = `
                 <div class="${colClass}">
                     <div class="position-relative mb-3">
-                        <a href="article/${article.filename}">
+                        <a href="${article.url}">
                             <img class="img-fluid w-100" src="${article.image || 'img/placeholder.jpg'}" style="object-fit: cover;" alt="${article.title}">
                         </a>
                         <div class="bg-white border border-top-0 p-4">
                             <div class="mb-2">
                                 <a class="badge badge-primary news-badge mr-2" href="news.html?category=${encodeURIComponent(article.category || 'News')}">${article.category || 'News'}</a>
-                                <a class="text-body" href=""><small>${new Date(article.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</small></a>
+                                <a class="text-body" href=""><small>${article.date || 'No date'}</small></a>
                             </div>
-                            <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href="article/${article.filename}">${article.title}</a>
-                            <p class="m-0">${article.excerpt || article.content.substring(0, 150) + '...'}</p>
+                            <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href="${article.url}">${article.title}</a>
+                            <p class="m-0">${article.excerpt || ''}</p>
                         </div>
                         <div class="d-flex justify-content-between bg-white border border-top-0 p-4">
                             <div class="d-flex align-items-center">
-                                <img class="rounded-circle mr-2" src="${article.authorImage || 'img/alfin.jpg'}" width="25" height="25" alt="${article.author || 'Author'}">
+                                <img class="rounded-circle mr-2" src="img/alfin.jpg" width="25" height="25" alt="${article.author || 'Author'}">
                                 <small>${article.author || 'Alfin Syawalan'}</small>
-                            </div>
-                            <div class="d-flex align-items-center">
-                                <small class="ml-3"><i class="far fa-eye mr-1"></i>${article.views || '0'}</small>
-                                <small class="ml-3"><i class="far fa-comment mr-1"></i>${article.comments || '0'}</small>
                             </div>
                         </div>
                     </div>
