@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Login - Indonesia Daily</title>
+    <title>Login - Pusat Informasi</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
@@ -72,7 +72,7 @@
                                 <p>Don't have an account? <a href="register.html" class="text-primary font-weight-bold">Register here</a></p>
                             </div>
                             <div class="text-center">
-                                <p><a href="test-auth.html" class="text-secondary small">ðŸ”§ Debug Authentication</a></p>
+                                <p><a href="test-auth.html" class="text-secondary small">�"� Debug Authentication</a></p>
                             </div>
                         </form>
                     </div>
@@ -85,7 +85,7 @@
     <div class="container-fluid bg-dark pt-5 px-sm-3 px-md-5">
         <div class="row py-4">
             <div class="col-12 text-center">
-                <p class="text-white">&copy; 2026 <a href="index.html" class="text-primary">Indonesia Daily</a>. All Rights Reserved.</p>
+                <p class="text-white">&copy; 2026 <a href="index.html" class="text-primary">Pusat Informasi</a>. All Rights Reserved.</p>
             </div>
         </div>
     </div>
@@ -94,7 +94,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     
     <script>
-        console.log('ðŸ“„ Login page loaded');
+        console.log('�"� Login page loaded');
         
         // Function to show alert
         function showAlert(message, type) {
@@ -121,28 +121,28 @@
         // Handle login
         function handleLogin(event) {
             event.preventDefault();
-            console.log('ðŸ” Login attempt started...');
+            console.log('�"� Login attempt started...');
             
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
             const remember = document.getElementById('remember').checked;
             
-            console.log('ðŸ“§ Email:', email);
-            console.log('ðŸ”‘ Password: [HIDDEN]');
-            console.log('ðŸ’¾ Remember:', remember);
+            console.log('�"� Email:', email);
+            console.log('�"' Password: [HIDDEN]');
+            console.log('�'� Remember:', remember);
             
             // Get users from localStorage
             const usersString = localStorage.getItem('users');
-            console.log('ðŸ‘¥ Users in storage:', usersString ? 'Found' : 'Not found');
+            console.log('�'� Users in storage:', usersString ? 'Found' : 'Not found');
             
             const users = JSON.parse(usersString || '[]');
-            console.log('ðŸ‘¥ Total users:', users.length);
+            console.log('�'� Total users:', users.length);
             
             // Find user
             const user = users.find(u => u.email === email && u.password === password);
             
             if (user) {
-                console.log('âœ… User found:', user.fullname);
+                console.log('✅ User found:', user.fullname);
                 
                 // Login successful
                 const session = {
@@ -152,65 +152,65 @@
                     remember: remember
                 };
                 
-                console.log('ðŸ’¾ Saving session:', session);
+                console.log('�'� Saving session:', session);
                 
                 // Save session
                 localStorage.setItem('userSession', JSON.stringify(session));
                 
                 // Verify session was saved
                 const savedSession = localStorage.getItem('userSession');
-                console.log('âœ… Session saved:', savedSession ? 'Success' : 'Failed');
+                console.log('✅ Session saved:', savedSession ? 'Success' : 'Failed');
                 
                 showAlert('Login berhasil! Mengalihkan ke halaman utama...', 'success');
                 
                 // Redirect to index after 1.5 seconds
                 setTimeout(() => {
-                    console.log('ðŸ”„ Redirecting to index.html...');
+                    console.log('�"� Redirecting to index.html...');
                     window.location.href = 'index.html';
                 }, 1500);
             } else {
-                console.log('âŒ Login failed - user not found');
+                console.log('❌ Login failed - user not found');
                 showAlert('Email atau password salah. Silakan coba lagi.', 'danger');
             }
         }
         
         // Check if already logged in - IMPROVED VERSION
         window.onload = function() {
-            console.log('ðŸ” Checking if already logged in...');
+            console.log('�"� Checking if already logged in...');
             const sessionString = localStorage.getItem('userSession');
             
             if (!sessionString) {
-                console.log('âœ… No active session - ready for login');
+                console.log('✅ No active session - ready for login');
                 return;
             }
             
             try {
                 const session = JSON.parse(sessionString);
-                console.log('ðŸ“¦ Session data:', session);
+                console.log('�"� Session data:', session);
                 
                 // Validate session has required fields
                 if (session && session.name && session.email) {
-                    console.log('âœ… Valid session found - user:', session.name);
+                    console.log('✅ Valid session found - user:', session.name);
                     showAlert('Anda sudah login sebagai ' + session.name + '. Mengalihkan...', 'info');
                     setTimeout(() => {
-                        console.log('ðŸ”„ Redirecting to index.html...');
+                        console.log('�"� Redirecting to index.html...');
                         window.location.href = 'index.html';
                     }, 1500);
                 } else {
-                    console.log('âš ï¸ Invalid session (missing fields) - clearing...');
+                    console.log('� ️ Invalid session (missing fields) - clearing...');
                     localStorage.removeItem('userSession');
                     showAlert('Session tidak valid. Silakan login kembali.', 'warning');
                 }
             } catch (error) {
-                console.error('âŒ Error parsing session:', error);
-                console.log('ðŸ—‘ï¸ Clearing corrupted session...');
+                console.error('❌ Error parsing session:', error);
+                console.log('�-'️ Clearing corrupted session...');
                 localStorage.removeItem('userSession');
                 showAlert('Session corrupted. Silakan login kembali.', 'warning');
             }
         }
         
         // Debug info
-        console.log('ðŸ’¾ LocalStorage status:');
+        console.log('�'� LocalStorage status:');
         console.log('- users:', localStorage.getItem('users') ? 'EXISTS' : 'NOT FOUND');
         console.log('- userSession:', localStorage.getItem('userSession') ? 'EXISTS' : 'NOT FOUND');
     </script>

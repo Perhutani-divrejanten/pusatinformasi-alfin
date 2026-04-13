@@ -1,4 +1,4 @@
-# 📰 Script Automation: Generate 34 Portal Berita
+﻿# 📰 Script Automation: Generate 34 Portal Berita
 
 Saya telah membuat sistem otomatis untuk generate **34 folder website portal berita** dengan tema yang berbeda-beda, tapi konten yang sama.
 
@@ -10,11 +10,11 @@ Saya telah membuat sistem otomatis untuk generate **34 folder website portal ber
 Template konfigurasi untuk 34 portal berita. Berisi:
 - **folderName**: Nama folder untuk setiap site (site-01, site-02, dst)
 - **siteName**: Nama portal berita (akan replace "BizNews")
-- **email**: Email portal (akan replace "IndonesiaDaily33@gmail.com")
-- **socialHandle**: Handle social media (akan replace "indonesiadaily")
+- **email**: Email portal (akan replace "pusatinformasi@gmail.com")
+- **socialHandle**: Handle social media (akan replace "PusatInformasi")
 - **colors**: Tema warna
-  - **primary**: Warna utama kuning (contoh: #FFCC00 → custom)
-  - **dark**: Warna gelap hitam (contoh: #1E2024 → custom)
+  - **primary**: Warna utama kuning (contoh: #F59E0B → custom)
+  - **dark**: Warna gelap hitam (contoh: #78350F → custom)
   - **secondary**: Warna sekunder
 
 ### 2. **`tools/generate-sites.js`**
@@ -114,12 +114,12 @@ Script akan mengganti di **semua file** (.html, .css, .js):
 | Yang Direplac | Diganti Dengan |
 |---|---|
 | `BizNews` | `siteName` dari config |
-| `IndonesiaDaily` | `siteName` (tanpa spaces) |
-| `indonesiadaily` | `socialHandle` |
-| `IndonesiaDaily33@gmail.com` | `email` |
-| `#FFCC00` (primary) | Warna primary dari config |
-| `#1E2024` (dark) | Warna dark dari config |
-| `#31404B` (secondary) | Warna secondary dari config |
+| `PusatInformasi` | `siteName` (tanpa spaces) |
+| `PusatInformasi` | `socialHandle` |
+| `pusatinformasi@gmail.com` | `email` |
+| `#F59E0B` (primary) | Warna primary dari config |
+| `#78350F` (dark) | Warna dark dari config |
+| `#5F1F7F` (secondary) | Warna secondary dari config |
 
 ---
 

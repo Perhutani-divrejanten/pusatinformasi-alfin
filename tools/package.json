@@ -1,19 +1,19 @@
 {
-  "name": "indonesiadaily-article-generator",
+  "name": "PusatInformasi-article-generator",
   "version": "1.0.0",
-  "description": "Generator artikel otomatis dari Google Sheets untuk Indonesia Daily",
+  "description": "Generator artikel otomatis dari Google Sheets untuk Pusat Informasi",
   "main": "generate.js",
   "scripts": {
     "generate": "node generate.js",
     "start": "node generate.js"
   },
   "keywords": [
-    "indonesiadaily",
+    "PusatInformasi",
     "generator",
     "google-sheets",
     "html"
   ],
-  "author": "Indonesia Daily Team",
+  "author": "Pusat Informasi Team",
   "license": "ISC",
   "dependencies": {
     "axios": "^1.6.0",
