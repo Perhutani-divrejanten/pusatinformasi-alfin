@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clear Storage - Pusat Informasi</title>
@@ -100,8 +98,8 @@
             ‚Ä¢ Infinite redirect loop
         </div>
         
-        <button class="btn" onclick="clearStorage()">ü-'Ô∏è Clear Storage Now</button>
-        <a href="index.html" class="btn btn-secondary">üè  Back to Home</a>
+        <button class="btn" onclick="clearStorage()">ÔøΩ-'Ô∏è Clear Storage Now</button>
+        <a href="index.html" class="btn btn-secondary">ÔøΩ  Back to Home</a>
         
         <div id="storageInfo" style="margin-top: 30px; text-align: left; font-size: 14px;"></div>
     </div>
@@ -113,17 +111,17 @@
             const users = localStorage.getItem('users');
             const session = localStorage.getItem('userSession');
             
-            let html = '<strong>ü"¶ Current Storage:</strong><br>';
+            let html = '<strong>ÔøΩ"ÔøΩ Current Storage:</strong><br>';
             html += '<code>users:</code> ' + (users ? '‚úÖ Found (' + JSON.parse(users).length + ' users)' : '‚ùå Not found') + '<br>';
             html += '<code>userSession:</code> ' + (session ? '‚úÖ Found' : '‚ùå Not found');
             
             if (session) {
                 try {
                     const sessionData = JSON.parse(session);
-                    html += '<br>‚"ú‚"Ä Name: ' + sessionData.name;
-                    html += '<br>‚""‚"Ä Email: ' + sessionData.email;
+                    html += '<br>ÔøΩ"ÔøΩÔøΩ"ÔøΩ Name: ' + sessionData.name;
+                    html += '<br>ÔøΩ""ÔøΩ"ÔøΩ Email: ' + sessionData.email;
                 } catch (e) {
-                    html += '<br><span style="color: red;">‚ö Ô∏è Session corrupted!</span>';
+                    html += '<br><span style="color: red;">ÔøΩ Ô∏è Session corrupted!</span>';
                 }
             }
             
@@ -135,7 +133,7 @@
             const statusDiv = document.getElementById('statusDiv');
             
             // Show warning
-            if (!confirm('‚ö Ô∏è PERINGATAN!\n\nIni akan menghapus:\n‚Ä¢ Semua akun yang terdaftar\n‚Ä¢ Session login yang aktif\n\nAnda harus register ulang setelah ini.\n\nLanjutkan?')) {
+            if (!confirm('ÔøΩ Ô∏è PERINGATAN!\n\nIni akan menghapus:\n‚Ä¢ Semua akun yang terdaftar\n‚Ä¢ Session login yang aktif\n\nAnda harus register ulang setelah ini.\n\nLanjutkan?')) {
                 return;
             }
             
@@ -155,7 +153,7 @@
                 }, 3000);
                 
             } catch (error) {
-                statusDiv.innerHTML = '<div class="status warning">‚ö Ô∏è Error: ' + error.message + '</div>';
+                statusDiv.innerHTML = '<div class="status warning">ÔøΩ Ô∏è Error: ' + error.message + '</div>';
             }
         }
         
@@ -170,10 +168,10 @@
                     JSON.parse(session);
                 } catch (e) {
                     document.getElementById('statusDiv').innerHTML = 
-                        '<div class="status warning">‚ö Ô∏è Session corrupted terdeteksi!<br>Silakan clear storage untuk memperbaiki.</div>';
+                        '<div class="status warning">ÔøΩ Ô∏è Session corrupted terdeteksi!<br>Silakan clear storage untuk memperbaiki.</div>';
                 }
             }
         }
     </script>
-</body>
-</html>
+
+</body></html>
