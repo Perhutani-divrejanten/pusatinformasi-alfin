@@ -24,34 +24,23 @@
 
 <body>
     <!-- Topbar Start -->
-    
     <!-- Topbar End -->
 
     <!-- Navbar Start -->
 <div class="container-fluid bg-white px-4 shadow-sm">
     <nav class="navbar navbar-expand-lg navbar-light">
-
-        <!-- LOGO KIRI (MEPET) -->
         <a href="../index.html" class="navbar-brand mr-5">
             <span style="font-weight: 700; color: #F59E0B; font-size: 24px; letter-spacing: -0.5px;">PUSAT<span style="color: #5F1F7F; font-weight: 500; font-size: 18px; margin-left: 2px;">INFORMASI</span></span>
         </a>
-
-        <!-- TOGGLER -->
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
-
-        <!-- MENU -->
         <div class="collapse navbar-collapse" id="navbarCollapse">
-
-            <!-- MENU TENGAH -->
             <div class="navbar-nav mx-auto text-uppercase font-weight-bold">
                 <a href="../index.html" class="nav-item nav-link active">Home</a>
                 <a href="../news.html" class="nav-item nav-link">News</a>
                 <a href="../contact.html" class="nav-item nav-link">About Us</a>
             </div>
-
-            <!-- SEARCH KANAN -->
             <form action="/search.html" method="get" class="input-group d-none d-lg-flex" style="width: 260px;">
                 <input type="text" class="form-control" name="q" placeholder="Cari berita..." required="">
                 <div class="input-group-append">
@@ -60,7 +49,6 @@
                     </button>
                 </div>
             </form>
-
         </div>
     </nav>
 </div>
@@ -99,7 +87,6 @@
                             </div>
                             <h1 class="mb-3 text-secondary text-uppercase font-weight-bold">{{title}}</h1>
                             <p>{{excerpt}}</p>
-                            
                             <div class="article-content">
                                 {{{content}}}
                             </div>
@@ -107,9 +94,8 @@
                         <div class="d-flex justify-content-between bg-white border border-top-0 p-4">
                             <div class="d-flex align-items-center">
                                 {{#if author}}<img class="rounded-circle mr-2" src="../img/pp.png" width="25" height="25" alt=""><span>Reporter: {{author}}</span>{{/if}}
+                            </div>
                             <div class="d-flex align-items-center">
-                                
-                                
                             </div>
                         </div>
                     </div>
@@ -123,7 +109,9 @@
                         <div class="bg-white border border-top-0 p-4">
                             {{#each comments}}
                             <div class="media mb-4">
-                                <img src="{{avatar}}" alt="Image" class="img-fluid mr-3 mt-1" style="width: 45px;"><div class="media-body"><h6><a class="text-secondary font-weight-bold" href="">{{name}}</a> <small><i>{{date}}</i></small></h6>
+                                <img src="{{avatar}}" alt="Image" class="img-fluid mr-3 mt-1" style="width: 45px;">
+                                <div class="media-body">
+                                    <h6><a class="text-secondary font-weight-bold" href="">{{name}}</a> <small><i>{{date}}</i></small></h6>
                                     <p>{{text}}</p>
                                     <button class="btn btn-sm btn-outline-secondary">Reply</button>
                                 </div>
@@ -135,11 +123,7 @@
                 </div>
 
                 <div class="col-lg-4">
-                    <!-- Social Follow Start -->
-                    
-                    <!-- Social Follow End -->
-
-                     <!-- Popular News Start -->
+                    <!-- Popular News Start -->
                     <div class="mb-3">
                         <div class="section-title mb-0">
                             <h4 class="m-0 text-uppercase font-weight-bold">Trending News</h4>
@@ -147,7 +131,7 @@
                         <div class="bg-white border border-top-0 p-3">
                             <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
                                 <a href="perhutani-majalengka.html">
-                                <img class="img-fluid" style="width: 110px; height: 110px; object-fit: cover;" src="../img/news-800x500-1.jpg" alt="">
+                                    <img class="img-fluid" style="width: 110px; height: 110px; object-fit: cover;" src="../img/news-800x500-1.jpg" alt="">
                                 </a>
                                 <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
                                     <div class="mb-2">
@@ -159,7 +143,7 @@
                             </div>
                             <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
                                 <a href="bojan-hodak.html">
-                                <img class="img-fluid" style="width: 110px; height: 110px; object-fit: cover;" src="../img/news-800x500-2.jpg" alt="">
+                                    <img class="img-fluid" style="width: 110px; height: 110px; object-fit: cover;" src="../img/news-800x500-2.jpg" alt="">
                                 </a>
                                 <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
                                     <div class="mb-2">
@@ -171,7 +155,7 @@
                             </div>
                             <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
                                 <a href="masih-ingat-resbob.html">
-                                <img class="img-fluid" style="width: 110px; height: 110px; object-fit: cover;" src="../img/news-800x500-3.jpg" alt="">
+                                    <img class="img-fluid" style="width: 110px; height: 110px; object-fit: cover;" src="../img/news-800x500-3.jpg" alt="">
                                 </a>
                                 <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
                                     <div class="mb-2">
@@ -205,15 +189,13 @@
                     <!-- Tags End -->
                 </div>
             </div>
-            <!-- Sidebar End -->
         </div>
     </div>
-    <!-- News Detail End -->
+    <!-- News With Sidebar End -->
 
     <!-- Footer Start -->
 <div class="container-fluid bg-dark pt-4 px-sm-3 px-md-5 mt-4">
     <div class="row py-4">
-        
         <div class="col-lg-4 col-md-6 mb-4">
             <h5 class="mb-4 text-white text-uppercase font-weight-bold">Berita Populer</h5>
             <div class="mb-3">
@@ -244,8 +226,6 @@
                 <a class="text-white mb-2" href="../index.html"><i class="fa fa-angle-right mr-2"></i>Beranda</a>
                 <a class="text-white mb-2" href="../news.html"><i class="fa fa-angle-right mr-2"></i>Berita Terkini</a>
                 <a class="text-white mb-2" href="../contact.html"><i class="fa fa-angle-right mr-2"></i>Tentang Kami</a>
-                
-                
             </div>
         </div>
         <div class="col-lg-4 col-md-6 mb-4">
@@ -260,15 +240,19 @@
 <!-- Footer End -->
 
     <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <a href="#" class="btn btn-primary btn-square back-to-top"><i class="fa fa-arrow-up"></i></a>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script src="../lib/easing/easing.min.js"></script>
     <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
 
     <!-- Template Javascript -->
+    <script src="../js/main.js"></script>
+    <!-- Authentication Script -->
+    <script src="../js/auth.js"></script>
+
     <script>
         // Update current date
         document.getElementById('currentDate').textContent = new Date().toLocaleDateString('en-US', { 
@@ -306,8 +290,6 @@
                 if (document.querySelector('.tranding-carousel')) {
                     const carousel = document.querySelector('.tranding-carousel');
                     carousel.innerHTML = breakingHtml;
-
-                    // Reinitialize owl carousel after dynamic item injection
                     if ($(carousel).hasClass('owl-loaded')) {
                         $(carousel).trigger('destroy.owl.carousel');
                         $(carousel).removeClass('owl-loaded owl-hidden');
@@ -323,7 +305,6 @@
                     });
                 }
 
-                // Trending News - first 3 newest articles (exclude current as well)
                 const trending = sortedArticles.filter(a => a.slug !== currentSlug).slice(0, 3);
                 let trendingHtml = '';
                 trending.forEach(article => {
@@ -345,29 +326,10 @@
                         </div>
                     `;
                 });
-                
-                // Find and populate trending news section
-                const trendingSection = document.querySelector('.bg-white.border.border-top-0.p-3');
-                if (trendingSection && Array.from(document.querySelectorAll('.bg-white.border.border-top-0.p-3')).find(el => el.previousElementSibling?.querySelector('h4')?.textContent?.includes('Trending'))) {
-                    const trendingDiv = Array.from(document.querySelectorAll('.bg-white.border.border-top-0.p-3')).find(el => el.previousElementSibling?.querySelector('h4')?.textContent?.includes('Trending'));
-                    if (trendingDiv) trendingDiv.innerHTML = trendingHtml;
-                }
 
-                // Tags - extract unique keywords from current article
-                const tagsList = document.getElementById('tagsList');
-                if (tagsList) {
-                    // You can customize tags based on article category or content
-                    const tags = ['{{category}}', 'Berita', 'Indonesia', '{{slug}}'];
-                    let tagsHtml = '';
-                    tags.forEach(tag => {
-                        if (tag && tag.startsWith('{') === false) {
-                            tagsHtml += `<a href="" class="btn btn-sm btn-outline-secondary m-1">${tag}</a>`;
-                        }
-                    });
-                    tagsList.innerHTML = tagsHtml;
-                }
+                const trendingDiv = Array.from(document.querySelectorAll('.bg-white.border.border-top-0.p-3')).find(el => el.previousElementSibling?.querySelector('h4')?.textContent?.includes('Trending'));
+                if (trendingDiv) trendingDiv.innerHTML = trendingHtml;
 
-                // Categories for footer
                 const categories = [...new Set(articles.map(a => a.category))];
                 let categoryHtml = '';
                 categories.forEach(cat => {
@@ -378,7 +340,6 @@
             })
             .catch(err => console.error('Error loading articles:', err));
 
-        // Back to top
         $(window).scroll(function () {
             if ($(this).scrollTop() > 300) {
                 $('.back-to-top').fadeIn('slow');
@@ -392,37 +353,6 @@
             $('html, body').animate({scrollTop: 0}, 800);
             return false;
         });
-
-        // Authentication is handled by auth.js
-        function logout() {
-            handleLogout();
-        }
     </script>
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-primary btn-square back-to-top"><i class="fa fa-arrow-up"></i></a>
-
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="../lib/easing/easing.min.js"></script>
-    <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="../js/main.js"></script>
-    <!-- Authentication Script -->
-    <script src="../js/auth.js"></script>
-    
-    <script>
-const dateElement = document.getElementById("currentDate");
-const today = new Date();
-const options = {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-};
-const formattedDate = today.toLocaleDateString('en-US', options);
-dateElement.textContent = formattedDate;
-</script>
 
 </body></html>
