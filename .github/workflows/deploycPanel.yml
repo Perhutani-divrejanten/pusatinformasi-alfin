@@ -36,7 +36,7 @@ jobs:
           protocol: ftp
           local-dir: ./
           server-dir: /pusatinformasi/
-          state-name: /pusatinformasi/.ftp-deploy-sync-state.json
+          state-name: .ftp-deploy-sync-state.json
           timeout: 600000
           dangerous-clean-slate: false
           exclude: |
